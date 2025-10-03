@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MiniFlix — Netflix Clone</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">MiniFlix</div>
+    <div class="header-actions">
+      <button id="loginBtn" class="btn">Sign In</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <h1 id="hero-title">Featured</h1>
+        <p id="hero-overview"></p>
+        <div class="hero-actions">
+          <button id="playHero" class="btn">Play</button>
+          <button id="moreHero" class="btn ghost">More Info</button>
+        </div>
+      </div>
+      <div id="hero-video" class="hero-video"></div>
+    </section>
+
+    <!-- Rows container -->
+    <section id="rows" class="rows"></section>
+  </main>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="loginHeading">
+      <button class="modal-close" id="closeModal">&times;</button>
+      <h2 id="loginHeading">Sign In</h2>
+      <form id="loginForm" class="login-form" onsubmit="event.preventDefault(); handleLoginSubmit();">
+        <label>
+          Email
+          <input id="email" name="email" type="email" required />
+        </label>
+        <label>
+          Password
+          <input id="password" name="password" type="password" required />
+        </label>
+        <button type="submit" class="btn">Sign In</button>
+      </form>
+    </div>
+  </div>
+
+  <template id="row-template">
+    <div class="row">
+      <h3 class="row-title"></h3>
+      <div class="row-posters"></div>
+    </div>
+  </template>
+
+  <template id="poster-template">
+    <div class="poster-card">
+      <img class="poster-img" alt="" />
+      <div class="poster-overlay">
+        <div class="poster-title"></div>
+      </div>
+      <div class="poster-preview"></div>
+    </div>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
